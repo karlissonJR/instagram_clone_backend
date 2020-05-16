@@ -1,9 +1,9 @@
 const express = require('express');
 
+const UserController = require('./controllers/UserController');
+
 const routes = express.Router()
 
-routes.get('/', (request, response) => {
-    return response.send('Hello Instagram Clone!');
-})
+routes.post('/user/new', UserController.create);
 
 module.exports = routes;
